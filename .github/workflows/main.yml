@@ -1,0 +1,19 @@
+name: BUILD MY CODE ANALYSER APP
+
+on:
+  branch:  [ main ]
+
+jobs:
+  build-analyser-app:
+     runs-on: ubuntu-latest
+
+     steps:
+       - uses: actions/checkout@v2.8.0
+       - name: setup Node JS    
+       - uses: actions/setup-node@v6.5.0
+         with:
+            node-version : 22.x
+       - name: install dependencies
+         run: npm install
+       - name: build analyser app
+         run: npm run build
